@@ -16,7 +16,6 @@ services:
       - "3000:3000"
     depends_on:
       - db
-      - nginx
 
   db:
     image: mysql:5.7
@@ -42,6 +41,8 @@ services:
     tty: true
     ports:
       - "8080:80"
+    depends_on:
+      - app
 
 networks:
   node-network:
